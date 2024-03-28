@@ -6,7 +6,11 @@ const secret = 'mysecretsshhhhh';
 const expiration = '2h';
 
 module.exports = {
-  AuthenticationError: new GraphQLError('Not Authorized to access this resource'),
+  AuthenticationError: new GraphQLError('Not Authorized to access this resource',{
+    extensions: {
+        code: 'UNAUTHENTICATED',
+    },
+}),
     // function for our authenticated routes
     authMiddleware: function ({ req }) {
         // allows token to be sent via  req.query or headers

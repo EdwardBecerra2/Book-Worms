@@ -9,7 +9,7 @@ import {
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
-import { DELETE_BOOK } from '../utils/mutations';
+import { REMOVE_BOOK} from '../utils/mutations';
 import { removeBookId } from '../utils/localStorage';
 import Auth from '../utils/auth';
 
@@ -17,7 +17,7 @@ import Auth from '../utils/auth';
 
 const SavedBooks = () => {
   const { LOADING, data } = useQuery(QUERY_ME);
-  const [ removeBook] = useMutation(DELETE_BOOK);
+  const [ removeBook] = useMutation(REMOVE_BOOK);
   const userData = data?.me || {};
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
