@@ -10,8 +10,8 @@ type Mutation {
     removeBook(bookId: ID!): User
 }
 type User {
-    id: ID!
-    name: String!
+    _id: ID!
+    username: String!
     email: String!
     bookcount: Int
     savedBooks: [Book]
