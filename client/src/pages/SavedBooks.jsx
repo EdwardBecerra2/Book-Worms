@@ -30,7 +30,7 @@ const SavedBooks = () => {
 
     try {
       // eslint-disable-next-line no-unused-vars
-      const { data }  = await removeBook({
+      const  data   = await removeBook({
         variables: { bookId: bookId },
       });
       removeBookId(bookId);
